@@ -32,3 +32,11 @@ p{
   font-size: 40px;
   font-weight: 100;
 }
+
+button:hover{
+  background-color: rgb(247, 8, 8);
+}
+
+#rnds:hover {
+  background-color: rgb(254, 26, 26);
+}
