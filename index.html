@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stone Paper Scissor</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="game">
+      <div>
+      <p>Rounds:</p>
+      <select name="rounds" id="rnds" onchange="rounds()">
+          <option value="3">3</option>
+          <option value="5">5</option>
+          <option value="7">7</option>
+        </select>
+        </div>
+      <div class="btnContainer">
+        <button class="btn" id="btn1" onclick="player='stone';playGame();display();">🪨Stone✊</button>
+        <button class="btn" id="btn2" onclick="player='paper';playGame();display()">📄Paper✋</button>
+        <button class="btn" id="btn3" onclick="player='scissor';playGame();display()">✂️Scissor</button> 
+      </div>
+      <button class="btn" onclick="computerScore=0,playerScore=0,round=0;document.querySelector('#display0').innerText ='';res();display();">Restart</button>
+      <h1 class="display" id="display0"></h1>
+      <h1 class="display" id="display1">Round 1</h1>
+      <h1 class="display" id="display2">YourScore:0</h1>
+      <h1 class="display" id="display3">ComputerScore:0</h1>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
