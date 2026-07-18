@@ -9,27 +9,31 @@ let player = "";
 let round = 0,
   computerScore = 0,
   playerScore = 0,
-  totalRounds = 3;
+  totalRounds = 0;
 function rounds() {
   totalRounds = Number(document.querySelector("#rnds").value);
 }
+window.onload = function () {
+  rounds();
+};
 function playGame() {
-  round++;
   if (round >= totalRounds) {
     if (playerScore > computerScore) {
-      document.querySelector("#display0").innerText = "Congratulation You Win 🎉🏆";
+      document.querySelector("#display0").innerText =
+        "Congratulation You Win 🎉🏆";
     } else if (playerScore == computerScore) {
       document.querySelector("#display0").innerText = "🤝 It's a Draw! 😐";
     } else {
       document.querySelector("#display0").innerText =
         "😢 Better Luck Next Time! 💔";
     }
-    document.querySelector('#btn1').disabled=true;
-    document.querySelector('#btn2').disabled=true;
-    document.querySelector('#btn3').disabled=true;
+    document.querySelector("#btn1").disabled = true;
+    document.querySelector("#btn2").disabled = true;
+    document.querySelector("#btn3").disabled = true;
   } else {
+    round++;
     choose();
-    document.querySelector('#rnds').disabled=true;
+    document.querySelector("#rnds").disabled = true;
     if (player !== computer) {
       if (player === "stone") {
         if (computer === "scissor") {
@@ -61,9 +65,9 @@ function display() {
     `Computer Score is:${computerScore}`;
 }
 
-function res(){
-   document.querySelector('#btn1').disabled=false;
-   document.querySelector('#btn2').disabled=false;
-   document.querySelector('#btn3').disabled=false;
-   document.querySelector('#rnds').disabled=false;
+function res() {
+  document.querySelector("#btn1").disabled = false;
+  document.querySelector("#btn2").disabled = false;
+  document.querySelector("#btn3").disabled = false;
+  document.querySelector("#rnds").disabled = false;
 }
