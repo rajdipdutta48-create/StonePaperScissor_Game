@@ -14,6 +14,7 @@ function rounds() {
   totalRounds = Number(document.querySelector("#rnds").value);
 }
 function playGame() {
+  round++;
   if (round >= totalRounds) {
     if (playerScore > computerScore) {
       document.querySelector("#display0").innerText = "Congratulation You Win 🎉🏆";
@@ -29,7 +30,6 @@ function playGame() {
   } else {
     choose();
     document.querySelector('#rnds').disabled=true;
-    round++;
     if (player !== computer) {
       if (player === "stone") {
         if (computer === "scissor") {
